@@ -8,7 +8,6 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import models.modelMain;
-import models.modelPenjualan;
 import models.modelToko;
 import views.viewPenjualan;
 import views.viewToko;
@@ -19,11 +18,9 @@ import views.viewToko;
  */
 public class controllerPenjualan {
     
-    private modelPenjualan theModel;
     private viewPenjualan theView;
 
-    public controllerPenjualan(modelPenjualan theModel, viewPenjualan theView) {
-        this.theModel = theModel;
+    public controllerPenjualan(viewPenjualan theView) {
         this.theView = theView;
         theView.setVisible(true);
         

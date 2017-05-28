@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import models.modelMain;
-import models.modelPenjualan;
 import models.modelToko;
 import views.viewGameOver;
 import views.viewMain;
@@ -209,7 +208,7 @@ public class controllerToko {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            new controllerPenjualan(new modelPenjualan(), new viewPenjualan());
+            new controllerPenjualan(new viewPenjualan());
             theView.dispose();
         }
     }
