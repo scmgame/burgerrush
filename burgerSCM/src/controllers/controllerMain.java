@@ -96,7 +96,7 @@ public class controllerMain {
         
         //=================Burger Vegetables=====================//
         if (statustoko==false) {
-            for (double a : theModel.forecastingBeefBurger(permintaan2,ramalan2)) {
+            for (double a : theModel.forecastingVegetablesBurger(permintaan2,ramalan2)) {
                 if (permintaanVegetables == 0) {
                     this.permintaanVegetables = a;
                     theModel.setDataVegetables((int) a);
@@ -111,9 +111,9 @@ public class controllerMain {
         
         ArrayList<Integer> randomcustomerVegetables;
         if (customerpermintaanVegetables == 0) {
-            randomcustomerVegetables = theModel.customerBeefBurger((int) this.permintaanVegetables); 
+            randomcustomerVegetables = theModel.customerVegetablesBurger((int) this.permintaanVegetables); 
         }else{
-            randomcustomerVegetables = theModel.customerBeefBurger((int) this.permintaanVegetables); 
+            randomcustomerVegetables = theModel.customerVegetablesBurger((int) this.customerpermintaanVegetables); 
         }
         
         this.jumlahcustomerVegetables = randomcustomerVegetables.size();
