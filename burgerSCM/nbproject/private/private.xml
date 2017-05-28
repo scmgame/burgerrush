@@ -5,15 +5,22 @@
         <group>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/models/modelPenjualan.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/views/viewToko.java</file>
+            <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/controllers/controllerAbout.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/models/modelMain.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/controllers/controllerToko.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/models/BaseModel.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/models/modelBurgerBeef.java</file>
+            <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/codingGambar/gambarAbout.java</file>
+            <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/codingGambar/gambarPlay.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/controllers/controllerMain.java</file>
+            <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/views/viewPlay.java</file>
+            <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/codingGambar/gambarForecast.java</file>
+            <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/views/viewAbout.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/models/modelToko.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/models/modelBurgerVegetables.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/burgerscm/BurgerSCM.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/views/viewMain.java</file>
+            <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/controllers/controllerPlay.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/views/viewPenjualan.java</file>
             <file>file:/C:/Users/ANGGAA/Documents/NetBeansProjects/burgerSCM/src/controllers/controllerPenjualan.java</file>
         </group>
