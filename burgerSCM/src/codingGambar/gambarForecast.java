@@ -10,7 +10,7 @@ public class gambarForecast extends JPanel{
  
     private Image image; // membuat variable image
      public gambarForecast() {
-        image = new ImageIcon(getClass().getResource("/gambar/scm2.jpeg")).getImage();
+        image = new ImageIcon(getClass().getResource("/gambar/scm2.jpg")).getImage();
         //memanggil sumber daya gambar
     }
      @Override

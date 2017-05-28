@@ -22,7 +22,18 @@ public class viewMain extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.btnBeef.setVisible(true);
-        this.btnBeef.setText("1");
+        this.btnBeef.setOpaque(false);
+        this.btnBeef.setContentAreaFilled(false);
+        this.btnBeef.setBorderPainted(false);
+        
+        this.btnVegetables.setOpaque(false);
+        this.btnVegetables.setContentAreaFilled(false);
+        this.btnVegetables.setBorderPainted(false);
+        
+        this.btnBuy.setOpaque(false);
+        this.btnBuy.setContentAreaFilled(false);
+        this.btnBuy.setBorderPainted(false);
+        
     }
     
     public void disableBuyStock(boolean a){
@@ -43,19 +54,21 @@ public class viewMain extends javax.swing.JFrame {
     //beef
     public void disableBeef(boolean a){
         this.btnBeef.setVisible(a);
+        this.txtBeef.setText("");
     }
     
     public void setBeef(int customer){
-        this.btnBeef.setText(String.valueOf(customer));
+        this.txtBeef.setText(String.valueOf(customer));
     }
     
     //vegetables
     public void disableVegetables(boolean a){
         this.btnVegetables.setVisible(a);
+        this.txtVegetables.setText("");
     }
     
     public void setVegetables(int customer){
-        this.btnVegetables.setText(String.valueOf(customer));
+        this.txtVegetables.setText(String.valueOf(customer));
     }
     
     //uang nya
@@ -78,64 +91,44 @@ public class viewMain extends javax.swing.JFrame {
     private void initComponents() {
 
         gambarMain1 = new codingGambar.gambarMain();
-        btnBuy = new javax.swing.JButton();
-        btnBeef = new javax.swing.JButton();
-        txtUang = new javax.swing.JLabel();
         btnVegetables = new javax.swing.JButton();
+        txtUang = new javax.swing.JLabel();
+        btnBeef = new javax.swing.JButton();
+        btnBuy = new javax.swing.JButton();
+        txtVegetables = new javax.swing.JLabel();
+        txtBeef = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuy.setText("BUY STOCK");
-
-        btnBeef.setBackground(new java.awt.Color(255, 102, 102));
-
-        txtUang.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        gambarMain1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVegetables.setBackground(new java.awt.Color(51, 255, 51));
+        gambarMain1.add(btnVegetables, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 353, 210, 52));
 
-        javax.swing.GroupLayout gambarMain1Layout = new javax.swing.GroupLayout(gambarMain1);
-        gambarMain1.setLayout(gambarMain1Layout);
-        gambarMain1Layout.setHorizontalGroup(
-            gambarMain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gambarMain1Layout.createSequentialGroup()
-                .addContainerGap(333, Short.MAX_VALUE)
-                .addGroup(gambarMain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gambarMain1Layout.createSequentialGroup()
-                        .addComponent(btnBuy)
-                        .addGap(262, 262, 262))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gambarMain1Layout.createSequentialGroup()
-                        .addGroup(gambarMain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnVegetables, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBeef, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(212, 212, 212))))
-            .addGroup(gambarMain1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(txtUang, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        gambarMain1Layout.setVerticalGroup(
-            gambarMain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gambarMain1Layout.createSequentialGroup()
-                .addComponent(btnBuy)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
-                .addComponent(btnBeef, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(btnVegetables, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(txtUang, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
+        txtUang.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        txtUang.setForeground(new java.awt.Color(204, 204, 0));
+        gambarMain1.add(txtUang, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 409, 152, 32));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gambarMain1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gambarMain1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        btnBeef.setBackground(new java.awt.Color(255, 102, 102));
+        gambarMain1.add(btnBeef, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 269, 210, 53));
+        gambarMain1.add(btnBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 61, 126, 32));
+
+        txtVegetables.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        txtVegetables.setForeground(new java.awt.Color(255, 255, 255));
+        txtVegetables.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarMain1.add(txtVegetables, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 124, 44, 37));
+
+        txtBeef.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        txtBeef.setForeground(new java.awt.Color(255, 255, 255));
+        txtBeef.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gambarMain1.add(txtBeef, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 70, 44, 36));
+
+        jLabel2.setText(" ");
+        gambarMain1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(537, 409, 210, -1));
+
+        getContentPane().add(gambarMain1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,6 +173,9 @@ public class viewMain extends javax.swing.JFrame {
     private javax.swing.JButton btnBuy;
     private javax.swing.JButton btnVegetables;
     private codingGambar.gambarMain gambarMain1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel txtBeef;
     private javax.swing.JLabel txtUang;
+    private javax.swing.JLabel txtVegetables;
     // End of variables declaration//GEN-END:variables
 }

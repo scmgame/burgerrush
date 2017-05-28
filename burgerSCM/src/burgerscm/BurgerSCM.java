@@ -5,10 +5,9 @@
  */
 package burgerscm;
 
-import controllers.controllerMain;
+import controllers.controllerPlay;
 import javax.swing.UnsupportedLookAndFeelException;
-import models.modelMain;
-import views.viewMain;
+import views.viewPlay;
 
 /**
  *
@@ -26,7 +25,7 @@ public class BurgerSCM {
                     break;
                 }
             }
-        new controllerMain(new modelMain(), new viewMain(),25,20,25,20);
+        new controllerPlay(new viewPlay());
     }
     
 }

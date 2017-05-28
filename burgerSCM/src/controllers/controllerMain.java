@@ -151,7 +151,7 @@ public class controllerMain {
             }
             
             if (jumlahcustomerBeef <= 0 && jumlahcustomerVegetables <= 0) {
-                theView.showMessage("Pesanan sudah habis !"+"\n"+"Penghasilan saat ini Rp"+uangcustomer+"\n Selanjutnya klik 'Buy Stock'");
+                theView.showMessage("Pesanan sudah habis !"+"\n"+"Penghasilan saat ini Rp"+uangcustomer+"\n Selanjutnya klik 'Beli Stok Bahan'");
                 theView.disableBuyStock(true);
             }
             
@@ -177,7 +177,7 @@ public class controllerMain {
             }
             
             if (jumlahcustomerBeef <= 0 && jumlahcustomerVegetables <= 0) {
-                theView.showMessage("Pesanan sudah habis !"+"\n"+"Penghasilan saat ini Rp"+uangcustomer+"\n Selanjutnya klik 'Buy Stock'");
+                theView.showMessage("Pesanan sudah habis !"+"\n"+"Penghasilan saat ini Rp"+uangcustomer+"\n Selanjutnya klik 'Beli Stok Bahan'");
                 theView.disableBuyStock(true);
             }
             
