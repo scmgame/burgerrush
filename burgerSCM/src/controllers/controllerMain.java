@@ -22,18 +22,24 @@ public class controllerMain {
     private modelMain theModel;
     private viewMain theView;
     public static double permintaanBeef = 0;
+    public static double customerpermintaanBeef = 0;
     public static double ramalanBeef = 0;
     private int customersplitBeef[];
     private int jumlahcustomerBeef = 0;
+    public static double sisarotiBeef = 0;
     
-     public static double permintaanVegetables = 0;
+    public static double permintaanVegetables = 0;
+    public static double customerpermintaanVegetables = 0;
     public static double ramalanVegetables = 0;
     private int customersplitVegetables[];
     private int jumlahcustomerVegetables = 0;
+    public static double sisarotiVegetables = 0;
     
-    public static double uangcustomer = 0.00;
+    public static double uangcustomer =0.00;
+    
+    public static boolean statustoko = false;
 
-    public controllerMain(modelMain theModel, viewMain theView, double permintaan, double ramalan) {
+    public controllerMain(modelMain theModel, viewMain theView, double permintaan1, double ramalan1, double permintaan2, double ramalan2) {
         this.theModel = theModel;
         this.theView = theView;
         this.jumlahcustomerBeef = jumlahcustomerBeef;
@@ -43,25 +49,32 @@ public class controllerMain {
         
         theView.setVisible(true);
         theView.disableBuyStock(false);
-        theView.showMessage("Selamat Bermain"+"\n"+"Penghasilan anda Rp0,00");
-        theView.setUang(0.00);
+        theView.showMessage("Selamat Bermain"+"\n"+"Penghasilan anda Rp"+uangcustomer);
+        theView.setUang(uangcustomer);
         theView.addBuyListener(new buyListener());
         theView.addBeefListener(new beefListener());
         theView.addVegetablesListener(new vegetablesListener());
         
         //=================Burger Beef=====================//
-        for (double a : theModel.forecastingBeefBurger(permintaan,ramalan)) {
-            if (permintaanBeef == 0) {
-                this.permintaanBeef = a;
-                theModel.setDataBeef((int) a);
-            }else if (ramalanBeef == 0){
-                this.ramalanBeef = a;
+        if (statustoko==false) {   
+            for (double a : theModel.forecastingBeefBurger(permintaan1,ramalan1)) {
+                if (permintaanBeef == 0) {
+                    this.permintaanBeef = a;
+                    theModel.setDataBeef((int) a);
+                }else if (ramalanBeef == 0){
+                    this.ramalanBeef = a;
+                }
             }
         }
         
         System.out.println(this.permintaanBeef);
         
-        ArrayList<Integer> randomcustomerBeef = theModel.customerBeefBurger((int) this.permintaanBeef);
+        ArrayList<Integer> randomcustomerBeef;
+        if (customerpermintaanBeef == 0) {
+            randomcustomerBeef = theModel.customerBeefBurger((int) this.permintaanBeef);
+        }else{
+            randomcustomerBeef = theModel.customerBeefBurger((int) this.customerpermintaanBeef);
+        }
         
         this.jumlahcustomerBeef = randomcustomerBeef.size();
         this.customersplitBeef = new int[randomcustomerBeef.size()];
@@ -82,18 +95,26 @@ public class controllerMain {
         
         
         //=================Burger Vegetables=====================//
-        for (double a : theModel.forecastingBeefBurger(permintaan,ramalan)) {
-            if (permintaanVegetables == 0) {
-                this.permintaanVegetables = a;
-                theModel.setDataVegetables((int) a);
-            }else if (ramalanVegetables == 0){
-                this.ramalanVegetables = a;
+        if (statustoko==false) {
+            for (double a : theModel.forecastingBeefBurger(permintaan2,ramalan2)) {
+                if (permintaanVegetables == 0) {
+                    this.permintaanVegetables = a;
+                    theModel.setDataVegetables((int) a);
+                }else if (ramalanVegetables == 0){
+                    this.ramalanVegetables = a;
+                }
             }
+            
         }
         
-        System.out.println(this.permintaanVegetables);
+        System.out.println(this.permintaanVegetables+","+ramalanVegetables);
         
-        ArrayList<Integer> randomcustomerVegetables = theModel.customerBeefBurger((int) this.permintaanVegetables);
+        ArrayList<Integer> randomcustomerVegetables;
+        if (customerpermintaanVegetables == 0) {
+            randomcustomerVegetables = theModel.customerBeefBurger((int) this.permintaanVegetables); 
+        }else{
+            randomcustomerVegetables = theModel.customerBeefBurger((int) this.permintaanVegetables); 
+        }
         
         this.jumlahcustomerVegetables = randomcustomerVegetables.size();
         this.customersplitVegetables = new int[randomcustomerVegetables.size()];

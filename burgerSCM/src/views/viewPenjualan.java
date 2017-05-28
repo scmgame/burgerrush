@@ -6,6 +6,8 @@
 package views;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,12 +29,36 @@ public class viewPenjualan extends javax.swing.JFrame {
         this.btnBack.addActionListener(listener);
     }
     
-    public void setTabelBeef(DefaultTableModel tabel) {
-        this.tabel1.setModel(tabel);
+    public void setTabelBeef(ArrayList<Integer> b) {
+       Object header[] ={"permintaan"};
+       DefaultTableModel tableModel = new DefaultTableModel(null, header);
+       
+       for (int i = tableModel.getRowCount() - 1; i >= 0; i--) {
+            tableModel.removeRow(i);
+       }
+       
+        Object datas[] = new Object[b.size()];
+        for (int i = 0; i < datas.length; i++) {
+            datas[i] = String.valueOf(b.get(i));
+            tableModel.insertRow(i, new Object[]{b.get(i)});
+        }
+        this.tabel1.setModel(tableModel);
     }
     
-    public void setTabelVegetables(DefaultTableModel tabel) {
-        this.tabel2.setModel(tabel);
+    public void setTabelVegetables(ArrayList<Integer> a) {
+        Object header[] ={"permintaan"};
+        DefaultTableModel tableModel = new DefaultTableModel(null, header);
+        
+        for (int i = tableModel.getRowCount() - 1; i >= 0; i--) {
+            tableModel.removeRow(i);
+        }
+        
+        Object data[] = new Object[a.size()];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = String.valueOf(a.get(i));
+            tableModel.insertRow(i, new Object[]{a.get(i)});
+        }
+        this.tabel2.setModel(tableModel);
     }
 
     /**
@@ -56,15 +82,23 @@ public class viewPenjualan extends javax.swing.JFrame {
 
         tabel1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Permintaan"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabel1);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
@@ -72,15 +106,23 @@ public class viewPenjualan extends javax.swing.JFrame {
 
         tabel2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Permintaan"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(tabel2);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N

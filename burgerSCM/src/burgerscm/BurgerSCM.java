@@ -26,7 +26,7 @@ public class BurgerSCM {
                     break;
                 }
             }
-        new controllerMain(new modelMain(), new viewMain(),25,20);
+        new controllerMain(new modelMain(), new viewMain(),25,20,25,20);
     }
     
 }

@@ -60,7 +60,7 @@ public class BaseModel {
 
         double hasilsiap[] = new double[2];
         hasilsiap[0] = oke;
-        hasilsiap[1] = dataset.get(dataset.size() - 1);
+        hasilsiap[1] = dataset.get(dataset.size() - 2);
 
         return hasilsiap;
     }

@@ -11,5 +11,13 @@ package models;
  */
 public class modelToko {
     
-    
+    public double[] forecastingBeefBurger(double permintaan, double ramalan) {
+        modelBurgerBeef forecastBeef = new modelBurgerBeef();
+        return forecastBeef.forecasting(permintaan, ramalan);
+    }
+
+    public double[] forecastingVegetablesBurger(double permintaan, double ramalan) {
+        modelBurgerVegetables forecastVegetables = new modelBurgerVegetables();
+        return forecastVegetables.forecasting(permintaan, ramalan);
+    }
 }

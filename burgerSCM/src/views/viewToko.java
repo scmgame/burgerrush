@@ -6,7 +6,11 @@
 package views;
 
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -21,6 +25,7 @@ public class viewToko extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(this);
+        
     }
 
     public void setTxtBurgerDaging(int BurgerDaging) {
@@ -34,6 +39,46 @@ public class viewToko extends javax.swing.JFrame {
     public void addPenjualanListener(ActionListener listener){
         this.btnPenjualan.addActionListener(listener);
     }
+    
+    public void addDagingtxtListener(KeyListener listener){
+        this.txtDaging.addKeyListener((KeyListener) listener);
+    }
+    
+    public void addSayurtxtListener(KeyListener listener){
+        this.txtSayur.addKeyListener((KeyListener) listener);
+    }
+    
+    public void addOKListener(ActionListener listener){
+        this.btnOK.addActionListener(listener);
+    }
+
+    public void setLblUang(String lblUang) {
+        this.lblUang.setText(lblUang);
+    }
+
+    public void setTxtRotiDaging(String txtRotiDaging) {
+        this.txtRotiDaging.setText(txtRotiDaging);
+    }
+    
+    public void setTxtRotiSayur(String txtRotiSayur) {
+        this.txtRotiSayur.setText(txtRotiSayur);
+    }
+
+    public String getTxtDaging() {
+        return txtDaging.getText();
+    }
+
+    public String getTxtSayur() {
+        return txtSayur.getText();
+    }
+    
+    //tampilkan pesan
+    public void showMessage(String pesan){
+        JOptionPane.showMessageDialog(this, pesan, "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    
+    
     
     
 
@@ -53,7 +98,15 @@ public class viewToko extends javax.swing.JFrame {
         txtBurgerSayur = new javax.swing.JLabel();
         btnPenjualan = new javax.swing.JButton();
         txtDaging = new javax.swing.JTextField();
+        txtRotiDaging = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         txtSayur = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtRotiSayur = new javax.swing.JTextField();
+        btnOK = new javax.swing.JButton();
+        lblUang = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +125,32 @@ public class viewToko extends javax.swing.JFrame {
         btnPenjualan.setForeground(new java.awt.Color(255, 255, 255));
         btnPenjualan.setText("Data Penjualan");
 
+        txtRotiDaging.setEditable(false);
+
+        jLabel3.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel3.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jLabel3.setText("Daging");
+
+        jLabel4.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel4.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jLabel4.setText("Roti");
+
+        jLabel5.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel5.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jLabel5.setText("Sayur");
+
+        jLabel6.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel6.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jLabel6.setText("Roti");
+
+        txtRotiSayur.setEditable(false);
+
+        btnOK.setBackground(new java.awt.Color(255, 255, 0));
+        btnOK.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnOK.setText("OK");
+
+        lblUang.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+
         javax.swing.GroupLayout gambarForecast1Layout = new javax.swing.GroupLayout(gambarForecast1);
         gambarForecast1.setLayout(gambarForecast1Layout);
         gambarForecast1Layout.setHorizontalGroup(
@@ -79,6 +158,22 @@ public class viewToko extends javax.swing.JFrame {
             .addGroup(gambarForecast1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gambarForecast1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtRotiDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(gambarForecast1Layout.createSequentialGroup()
+                                .addComponent(txtRotiSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(gambarForecast1Layout.createSequentialGroup()
                         .addComponent(btnPenjualan)
                         .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,38 +185,62 @@ public class viewToko extends javax.swing.JFrame {
                                 .addComponent(txtBurgerDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(gambarForecast1Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel2))
-                            .addGroup(gambarForecast1Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
-                                .addComponent(txtBurgerSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(245, Short.MAX_VALUE))
-                    .addGroup(gambarForecast1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(txtDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(txtSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102))))
+                                .addComponent(txtBurgerSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(gambarForecast1Layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(120, 120, 120)
+                        .addComponent(lblUang, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOK)))
+                .addContainerGap())
+            .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gambarForecast1Layout.createSequentialGroup()
+                    .addContainerGap(616, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(4, 4, 4)))
         );
         gambarForecast1Layout.setVerticalGroup(
             gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gambarForecast1Layout.createSequentialGroup()
-                .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtBurgerDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBurgerSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gambarForecast1Layout.createSequentialGroup()
+                        .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtBurgerDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBurgerSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(gambarForecast1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUang, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(79, 79, 79)
                 .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 265, Short.MAX_VALUE))
+                    .addComponent(txtRotiDaging, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(101, 101, 101)
+                .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRotiSayur, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 130, Short.MAX_VALUE))
             .addGroup(gambarForecast1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnPenjualan)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(gambarForecast1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(gambarForecast1Layout.createSequentialGroup()
+                    .addGap(148, 148, 148)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(255, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -137,6 +256,7 @@ public class viewToko extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     /**
      * @param args the command line arguments
@@ -175,13 +295,21 @@ public class viewToko extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOK;
     private javax.swing.JButton btnPenjualan;
     private codingGambar.gambarForecast gambarForecast1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lblUang;
     private javax.swing.JLabel txtBurgerDaging;
     private javax.swing.JLabel txtBurgerSayur;
     private javax.swing.JTextField txtDaging;
+    private javax.swing.JTextField txtRotiDaging;
+    private javax.swing.JTextField txtRotiSayur;
     private javax.swing.JTextField txtSayur;
     // End of variables declaration//GEN-END:variables
 }

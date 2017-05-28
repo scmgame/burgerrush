@@ -23,8 +23,8 @@ public class modelPenjualan {
             tableModel.removeRow(i);
         }
         
-        String kolom[] = new String[1];
-        for (int i = 0; i < beef.size(); i++) {
+        String kolom[] = new String[beef.size()];
+        for (int i = 0; i < kolom.length; i++) {
             kolom[i] = String.valueOf(beef.get(i));
         }
         
@@ -41,10 +41,12 @@ public class modelPenjualan {
             tableModel.removeRow(i);
         }
         
-        String kolom[] = new String[1];
-        for (int i = 0; i < vegetables.size(); i++) {
-            kolom[i] = String.valueOf(vegetables.get(i));
-        }
+        System.out.println("jumlah "+vegetables.size());
+        String kolom[] = new String[vegetables.size()];
+            for (int i = 0; i < kolom.length; i++) {
+                kolom[i] = String.valueOf(vegetables.get(i));
+            }
+          
         
         tableModel.addRow(kolom);
        

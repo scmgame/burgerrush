@@ -29,8 +29,9 @@ public class controllerPenjualan {
         
         System.out.println(modelMain.beefData);
         System.out.println(modelMain.vegetablesData);
-        theView.setTabelBeef(theModel.getTableModelBeef(modelMain.beefData));
-        theView.setTabelVegetables(theModel.getTableModelVegetables(modelMain.vegetablesData));
+        
+        theView.setTabelBeef(modelMain.beefData);
+        theView.setTabelVegetables(modelMain.vegetablesData);
         theView.addBackListener(new backListener());
     }
 
