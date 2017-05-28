@@ -46,11 +46,6 @@ public class viewPlay extends javax.swing.JFrame {
     public void addExitListener(ActionListener listener){
         this.btnExit.addActionListener(listener);
     }
-    
-    //tampilkan pesan
-    public void showMessage(String pesan){
-        JOptionPane.showMessageDialog(this, pesan, "Pemberitahuan", JOptionPane.INFORMATION_MESSAGE);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
