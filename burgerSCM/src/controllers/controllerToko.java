@@ -12,6 +12,7 @@ import java.awt.event.KeyListener;
 import models.modelMain;
 import models.modelPenjualan;
 import models.modelToko;
+import views.viewGameOver;
 import views.viewMain;
 import views.viewPenjualan;
 import views.viewToko;
@@ -129,8 +130,8 @@ public class controllerToko {
                         ramalanVegetablesnew = 0.00;
 
                         if (controllerMain.sisarotiBeef > 10 || controllerMain.sisarotiVegetables > 10) {
-                            theView.showMessage("Game Over ! \n Sisa Beef Burger = " + controllerMain.sisarotiBeef + "\n Sisa Vagetables Burger = " + controllerMain.sisarotiVegetables);
-                            System.exit(0);
+                            new controllerGameOver(new viewGameOver(), "Sisa Beef Burger = " + controllerMain.sisarotiBeef + "\nSisa Vagetables Burger = " + controllerMain.sisarotiVegetables);
+                            theView.dispose();
                         } else {
                             //pindah controllerMain
                             controllerMain.statustoko = true;
