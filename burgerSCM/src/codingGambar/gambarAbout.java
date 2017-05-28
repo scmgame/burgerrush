@@ -6,11 +6,11 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-public class gambarMain extends JPanel{
+public class gambarAbout extends JPanel{
  
     private Image image; // membuat variable image
-     public gambarMain() {
-        image = new ImageIcon(getClass().getResource("/gambar/scm1.jpg")).getImage();
+     public gambarAbout() {
+        image = new ImageIcon(getClass().getResource("/gambar/about.jpg")).getImage();
         //memanggil sumber daya gambar
     }
      @Override
